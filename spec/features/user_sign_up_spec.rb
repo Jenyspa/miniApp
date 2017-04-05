@@ -14,6 +14,8 @@ feature 'User Sign-up' do
     fill_in 'E-mail', with: user.email
 
     #expectation
+    expect(current_path).to  eq new_user_registration_path
+    expect(current_path).to  eq root_path
     expect(page).to have_content('Cadastro efetuado com sucesso')
 
     have_link('Sign in', root_path)
