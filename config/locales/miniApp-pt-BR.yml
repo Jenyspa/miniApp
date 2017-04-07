@@ -1,4 +1,6 @@
 pt-BR:
+  public: 'Publica'
+  private: 'Privada'
   activerecord:
     models:
       user: "Usuário"

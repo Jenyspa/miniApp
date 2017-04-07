@@ -1,0 +1,5 @@
+<%= @list.name %>
+<%= t @list.privacy%>
+<% @list.tasks.each do |task| %>
+  <%= task.description %>
+<% end %>

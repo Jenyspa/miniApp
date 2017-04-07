@@ -10,8 +10,8 @@ feature 'User Sign-up' do
     #execution
     visit root_path
     click_on 'Sign up'
-    fill_in 'Name',   with: user.name
-    fill_in 'Email', with: user.email
+    fill_in 'Nome',   with: user.name
+    fill_in 'E-mail', with: user.email
 
     #expectation
     have_link('Sign in', root_path)

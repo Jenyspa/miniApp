@@ -9,12 +9,13 @@ feature 'User logout system' do
                     password: '123456')
     #execution
     visit root_path
-    fill_in 'Email',    with: user.email
-    fill_in 'Password', with: user.password
+    fill_in 'E-mail', with: user.email
+    fill_in 'Senha',  with: user.password
     click_on 'Log in'
 
     #expectation
     expect(current_path).to eq root_path
+    expect(page).to have_content("Olá Jenifer Spinoza")
   end
 
 end
