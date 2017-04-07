@@ -1,14 +1,25 @@
 <%= form_for @list do |f| %>
-  <%= f.label :name, 'Nome da Lista' %>
-  <%= f.text_field :name %>
-  <%= f.fields_for :tasks do |task_form| %>
-    <%= task_form.label :description, 'Tarefa'%>
-    <%= task_form.text_field :description%>
-  <% end %>
-  <%= f.radio_button(:privacy, "public")%>
-  <%= f.label(:privacy_public, "Pública") %>
-  <%= f.radio_button(:privacy, "private")%>
-  <%= f.label(:privacy_private, "Privada")%>
+    <div class="field">
+      <%= f.label :name, 'Nome da Lista' %>
+      <%= f.text_field :name %>
+    </div>
 
-  <%= f.submit "Salvar"%>
-<% end %>
+      <%= f.fields_for :tasks do |task_form| %>
+        <div class="field">
+          <%= task_form.label :description, 'Tarefa'%>
+          <%= task_form.text_field :description%>
+        </div>
+      <% end %>
+
+    <div class="field">
+      <%= f.radio_button(:privacy, "public")%>
+      <%= f.label(:privacy_public, "Pública") %>
+    </div>
+    <div class="field">
+      <%= f.radio_button(:privacy, "private")%>
+      <%= f.label(:privacy_private, "Privada")%>
+    </div>
+    <div class="actions">
+      <%= f.submit "Salvar" %>
+    </div>
+  <% end %>

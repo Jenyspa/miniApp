@@ -1,5 +1,27 @@
 <%= @list.name %>
-<%= t @list.privacy%>
 <% @list.tasks.each do |task| %>
   <%= task.description %>
 <% end %>
+<%= t @list.privacy%>
+
+<p id="notice"><%= notice %></p>
+
+  <p>
+    <strong>Lista:</strong>
+    <%= @list.name %>
+  </p>
+
+  <p>
+    <strong>Privacidade:</strong>
+    <%= @list.privacy %>
+  </p>
+
+  <p>
+    <strong>Tarefas:</strong>
+    <% @list.tasks.each do |task| %>
+      <%= task.description %>
+    <% end %>
+  </p>
+
+  <%= link_to 'Edit', edit_list_path(@list) %> |
+  <%= link_to 'Back', root_path %>

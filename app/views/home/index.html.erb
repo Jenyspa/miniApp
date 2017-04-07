@@ -2,3 +2,14 @@
 
 <%= link_to 'Criar Lista', new_list_path %>
 <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+
+  <h1>Listas de Tarefas</h1>
+  <div class="row">
+    <% @lists.each do |list| %>
+      <div class="col-sm-4">
+        <b>Lista:</b> <%= link_to list.name, @list %><br>
+        <b>Status:</b> <%= list.privacy %> <br>
+        <br>
+      </div >
+    <% end %>
+  </div>
