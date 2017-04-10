@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  resources :lists, only: [:new, :create, :show, :edit, :update]
-
+  resources :lists, only: [:new, :create, :show, :edit, :update, :delete]
+  resources :tasks, only: [:delete]
 
 end
