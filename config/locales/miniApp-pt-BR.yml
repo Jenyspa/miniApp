@@ -9,3 +9,6 @@ pt-BR:
         name: "Nome"
         email: "E-mail"
         password: "Senha"
+    views:
+      public: 'Publica'
+      private: 'Privada'

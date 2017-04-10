@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  resources :lists, only: [:new, :create, :show, :edit]
+  resources :lists, only: [:new, :create, :show, :edit, :update]
 
 
 end

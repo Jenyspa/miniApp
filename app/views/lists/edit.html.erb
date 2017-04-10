@@ -1,0 +1,32 @@
+<%= flash[:alert] %>
+
+<%= form_for @list do |f| %>
+    <div class="field">
+      <%= f.label :name, 'Nome da Lista' %>
+      <%= f.text_field :name %>
+    </div>
+
+      <%= f.fields_for :tasks do |task_form| %>
+        <div class="field">
+          <%= task_form.label :description, 'Tarefa'%>
+          <%= task_form.text_field :description%>
+          <%= link_to 'Deletar', @task, method: :delete %>
+        </div>
+      <% end %>
+
+    <div class="field">
+      <%= f.radio_button(:privacy, "public")%>
+      <%= f.label(:privacy_public, "Pública") %>
+    </div>
+    <div class="field">
+      <%= f.radio_button(:privacy, "private")%>
+      <%= f.label(:privacy_private, "Privada")%>
+    </div>
+    <div class="actions">
+      <%= f.submit "Atualizar" %>
+    </div>
+
+    <div>
+      <%= link_to 'Voltar', root_path%>
+    </div>
+  <% end %>
